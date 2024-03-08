@@ -23,7 +23,7 @@ The Front folder contains the cliet directory which can be run with
                         
 to start the NextJs project.
 
-ADMIN 
+##ADMIN 
 nickname:  admin
 pass:      root
 
