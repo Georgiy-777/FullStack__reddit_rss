@@ -6,15 +6,20 @@ FullStack demo project /Use Stack: NextJs ExpressJs Mongo Mongoose
 ## Demo
 
 
-https://www.loom.com/share/e05132f9992f4ab7a644da829ac986b9?sid=c41d029e-8b31-4056-98a2-6dd9c3cdafc8
+https://www.loom.com/share/2b47cca6371b466992152bcba48167f4?sid=298a9361-7953-434f-ab8a-d610378608f3
 ## Description
 
 The Back folder contains the server directory which can be run with 
+
+                        npm install
                         npm run dev 
+
 to start the local server.
 
 The Front folder contains the cliet directory which can be run with 
+                        npm install
                         npm run dev 
+                        
 to start the NextJs project.
 
 
