@@ -17,6 +17,7 @@ The Back folder contains the server directory which can be run with
 to start the local server.
 
 The Front folder contains the cliet directory which can be run with 
+
                         npm install
                         npm run dev 
                         
