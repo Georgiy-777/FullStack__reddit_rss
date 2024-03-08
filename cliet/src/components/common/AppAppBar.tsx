@@ -73,15 +73,7 @@ function AppAppBar() {
                             REDDIT
                         </Typography>
                     </Box>
-                    {!isAdmin && (
-                        <Box
-                            sx={{
-                              
-                            }}
-                        >
-                        <SelectSmall/>
-                        </Box>
-                    )}
+             
 
                     {isAdmin && (
                         <Button

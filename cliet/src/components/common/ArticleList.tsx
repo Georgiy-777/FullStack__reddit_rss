@@ -12,6 +12,7 @@ import adminSelectors from '@/store/auth/auth.selector';
 import articlesSelectors from '@/store/article/article.selector';
 import { useLazyGetAllArticlesQuery } from '@/store/article/article.api';
 import { ST } from 'next/dist/shared/lib/utils';
+import SelectSmall from './SelectSmall';
 
 type IArticle = {
     title: string;
@@ -49,6 +50,9 @@ const ArticleList = () => {
     const isAdmin = useSelector(adminSelectors.getIsAdmin());
     return (
         <Grid item mb={'50px'} xs={12} md={!isAdmin ? 12 : 7}>
+            <Box sx={{ textAlign: 'right' }}>
+                <SelectSmall />
+            </Box>
             {articleList && articleList?.length > 0 ? (
                 articleList?.map((item: IArticle) => (
                     <Box
@@ -58,33 +62,15 @@ const ArticleList = () => {
                     >
                         <Stack
                             direction={'column'}
-                            spacing={'2'}
+                            // spacing={'2'}
                             flexGrow={1}
                             alignItems={'start'}
                             position={'relative'}
-                            height={'133px'}
+                            height={'153px'}
                             pr={'30px'}
+                            justifyContent={'space-between'}
                         >
                             {isAdmin && <ArticleEdit item={item} />}
-                            <Stack direction={'row'} gap={2} mb={'20px'}>
-                                <Typography
-                                    variant="overline"
-                                    component={'span'}
-                                    sx={{
-                                        fontSize: '1rem',
-                                        fontWeight: 'bold',
-                                    }}
-                                >
-                                    {item?.author}
-                                </Typography>
-                                <Typography
-                                    variant="subtitle1"
-                                    component={'span'}
-                                    color={'#faa957'}
-                                >
-                                    {diffTime(item?.pubDate)}
-                                </Typography>
-                            </Stack>
 
                             <Typography
                                 target="_blank"
@@ -93,7 +79,7 @@ const ArticleList = () => {
                                 sx={{
                                     textDecoration: 'underline',
                                     fontWeight: 'bold',
-                                    fontSize: '1.1rem',
+                                    fontSize: '1.2rem',
                                     color: 'black',
                                     ':hover': {
                                         cursor: 'pointer',
@@ -101,6 +87,27 @@ const ArticleList = () => {
                                 }}
                             >
                                 {item?.title}
+                            </Typography>
+
+                            <Typography
+                                component={'div'} // изменение компонента на 'div', так как `dangerouslySetInnerHTML` не может быть использован с компонентом 'p'
+                                sx={{
+                                    fontWeight: '700',
+                                    fontSize: '1rem',
+                                    color: 'black',
+                                    my: '10px',
+                                }}
+                                dangerouslySetInnerHTML={{
+                                    __html: item?.content,
+                                }}
+                            />
+
+                            <Typography
+                                variant="subtitle1"
+                                component={'span'}
+                                color={'#faa957'}
+                            >
+                                {diffTime(item?.pubDate)}
                             </Typography>
                         </Stack>
                     </Box>
