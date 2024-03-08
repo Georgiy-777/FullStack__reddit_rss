@@ -30,10 +30,8 @@ const parseAndSave = async url => {
 
 module.exports.rssUrlParser = async () => {
     try {
-      console.log('Server is starting...');
 
       schedule.scheduleJob('*/5 * * * *', function () {
-        console.log('Starting scheduled task to parse and save RSS feed');
         parseAndSave(feedUrl).catch(err => console.error(err));
       });
     } catch (error) {
