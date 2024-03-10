@@ -1,21 +1,13 @@
+/**
+ * The code defines a React component for an admin panel form to create new articles with input fields
+ * for title, author, content, and link.
+ */
 'use client';
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { styled, css } from '@mui/system';
-import { Modal as BaseModal } from '@mui/base/Modal';
-
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import Input from '@mui/material/Input';
-
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { Grid, Stack, TextField, Typography } from '@mui/material';
-
-import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-
-import Button from '@mui/material/Button';
 import { useCreateArticleMutation } from '@/store/article/article.api';
+import Button from '@mui/material/Button';
 
 interface IArticle {
     title: string;
@@ -26,18 +18,7 @@ interface IArticle {
     contentSnippet: string;
     id: string;
 }
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '100%',
-    maxWidth: '600px',
-    bgcolor: 'background.paper',
-    borderRadius: '10px',
-    boxShadow: 24,
-    p: 4,
-};
+
 
 type Inputs = {
     title: string;
@@ -193,14 +174,6 @@ const AdminPanel = () => {
                         Create article
                     </Button>
 
-                    {/* <LoadingButton
-                            loading
-                            loadingPosition="start"
-                            startIcon={<SaveIcon />}
-                            variant="outlined"
-                            >
-                            Save
-                            </LoadingButton> */}
                 </Box>
             </Box>
         </Grid>

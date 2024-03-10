@@ -1,3 +1,7 @@
+/**
+ * The function `getIsAdmin` returns a boolean value indicating whether the user is an admin based on
+ * the state object provided.
+ */
 import axios from 'axios';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { axiosService } from '../apiService/axiosService';

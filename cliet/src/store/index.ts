@@ -1,3 +1,7 @@
+/**
+ * The above TypeScript code defines two selector functions for retrieving a single article and
+ * multiple articles from the state object.
+ */
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { redditArticleApi } from './apiService/redditArticApi';
 import {
@@ -41,5 +45,10 @@ const authPersistConfig = {
 
 
   export const persistor = persistStore(store);
+/* The line `import { createSlice } from '@reduxjs/toolkit';` is importing the `createSlice` function
+from the Redux Toolkit library. This function is used to create a slice of the Redux state, which
+includes the initial state, reducers, and actions related to a specific part of the state. It helps
+in simplifying the process of defining Redux logic by providing a more concise syntax compared to
+traditional Redux. */
 
 export default store;

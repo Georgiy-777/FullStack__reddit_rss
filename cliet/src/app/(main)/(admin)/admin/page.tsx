@@ -1,23 +1,28 @@
+/**
+ * The above function is a TypeScript React component for an admin sign-in form that utilizes
+ * Material-UI components and React Hook Form for form validation and submission.
+ * @param {any} props - The `props` parameter in the `Copyright` component function represents any
+ * additional props that may be passed to the component. In this case, it is used to spread these
+ * additional props onto the `Typography` component within the `Copyright` component. This allows for
+ * flexibility in customizing the `Typography`
+ * @returns The code snippet provided is a React functional component named `SignIn` that represents a
+ * sign-in form for admin users. It includes form fields for entering a nickname and password, a submit
+ * button for signing in, and error handling for required fields. The component also utilizes
+ * Material-UI components for styling and form elements.
+ */
 'use client';
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '@/components/common/Logo';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { useLoginAdminMutation } from '@/store/auth/auth.api';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import Link from '@mui/material/Link';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/navigation';
-
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 interface IResponce {
     error: boolean;
     status: number;

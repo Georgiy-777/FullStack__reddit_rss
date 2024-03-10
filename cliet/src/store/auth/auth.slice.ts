@@ -1,3 +1,5 @@
+/* This code snippet is creating a Redux slice using the `createSlice` function from the
+`@reduxjs/toolkit` package in TypeScript. */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

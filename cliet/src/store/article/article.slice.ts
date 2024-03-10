@@ -1,3 +1,6 @@
+/**
+ * The function exports selectors for retrieving a single article and multiple articles from the state.
+ */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

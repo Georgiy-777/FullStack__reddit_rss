@@ -1,11 +1,9 @@
+/* This code snippet is defining a React functional component called `Logo`. Within this component, an
+SVG icon is being rendered using the `SvgIcon` component from the Material-UI library
+(`@mui/material`). The SVG icon itself contains multiple paths that define the shape and styling of
+the icon. */
 const { SvgIcon } = require('@mui/material');
 
-/**
- * Logo component function
- *
- * @param {object} props - The props object
- * @return {JSX.Element} The logo component
- */
  const Logo=() =>{
     return (
         <SvgIcon >
