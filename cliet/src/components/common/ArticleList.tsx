@@ -1,17 +1,25 @@
-import * as React from 'react';
-import clsx from 'clsx';
-import { styled, css } from '@mui/system';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import { useSelector } from 'react-redux';
-import { CardMedia, Stack, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
-import ArticleEdit from '../../components/common/ArticleEdit';
-import adminSelectors from '@/store/auth/auth.selector';
-import articlesSelectors from '@/store/article/article.selector';
+/**
+ * The `ArticleList` component in TypeScript React renders a list of articles with options for editing
+ * and displays a message if no articles are available.
+ * @param {string} iso - The `iso` parameter in the `diffTime` function represents a date string in ISO
+ * format. The function calculates the time difference between the provided ISO date and the current
+ * date and returns a formatted string indicating how long ago the provided date was compared to the
+ * current date.
+ * @returns The `ArticleList` component is being returned. This component fetches a list of articles,
+ * displays them in a grid layout, and includes functionality for editing articles if the user is an
+ * admin. It also calculates and displays the time difference between the publication date of each
+ * article and the current date. If there are articles in the list, they are displayed with their
+ * title, content, publication date, and
+ */
 import { useLazyGetAllArticlesQuery } from '@/store/article/article.api';
-import { ST } from 'next/dist/shared/lib/utils';
+import articlesSelectors from '@/store/article/article.selector';
+import adminSelectors from '@/store/auth/auth.selector';
+import { Stack, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import * as React from 'react';
+import { useSelector } from 'react-redux';
+import ArticleEdit from '../../components/common/ArticleEdit';
 import SelectSmall from './SelectSmall';
 
 type IArticle = {
@@ -90,7 +98,7 @@ const ArticleList = () => {
                             </Typography>
 
                             <Typography
-                                component={'div'} // изменение компонента на 'div', так как `dangerouslySetInnerHTML` не может быть использован с компонентом 'p'
+                                component={'div'} 
                                 sx={{
                                     fontWeight: '700',
                                     fontSize: '1rem',

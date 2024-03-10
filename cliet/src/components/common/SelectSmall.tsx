@@ -1,3 +1,5 @@
+/* This code snippet is a React functional component named `Hero` that represents a hero section of a
+webpage. Here's a breakdown of what it does: */
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -7,16 +9,12 @@ import { useLazyGetAllArticlesQuery } from '@/store/article/article.api';
 
 export default function SelectSmall() {
   const [sort, setSort] = React.useState('');
-
   const handleChange = (event: SelectChangeEvent) => {
     setSort(event.target.value);
   };
-
   const [getAllArticles] = useLazyGetAllArticlesQuery();
-  
   React.useEffect(() => {
       getAllArticles(sort);
-
   },[sort])
   
   return (

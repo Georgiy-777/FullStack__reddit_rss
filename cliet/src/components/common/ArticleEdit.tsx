@@ -7,10 +7,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import UpdateBookModal from '../modals/UpdateBookModal';
 import { useDeleteArticleMutation } from '@/store/article/article.api';
 
-
-
-type IArticle = {
-    
+type IArticle = {    
         title: string,
         link: string,
         pubDate: string,
@@ -18,8 +15,7 @@ type IArticle = {
         content: string,
         contentSnippet: string,
         _id: string,
-        isoDate: string
-    
+        isoDate: string    
 }
 interface ArticleEditProps {
     item: IArticle; 

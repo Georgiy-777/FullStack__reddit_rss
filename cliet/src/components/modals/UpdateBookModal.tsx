@@ -1,13 +1,15 @@
-import * as React from 'react';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+/**
+ * The code snippet is a React component called `UpdateBookModal` that renders a modal for editing an
+ * article using Material-UI components and React Hook Form.
+ */
+import { useUpdateArticleMutation } from '@/store/article/article.api';
+import { TextField } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { TextField } from '@mui/material';
-import { useUpdateArticleMutation } from '@/store/article/article.api';
+import Fade from '@mui/material/Fade';
+import Modal from '@mui/material/Modal';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 
 type IArticle = {
     title: string;
@@ -176,14 +178,6 @@ export default function UpdateBookModal({
                             Save changes
                         </Button>
 
-                        {/* <LoadingButton
-                            loading
-                            loadingPosition="start"
-                            startIcon={<SaveIcon />}
-                            variant="outlined"
-                            >
-                            Save
-                            </LoadingButton> */}
                     </Box>
                 </Box>
             </Fade>

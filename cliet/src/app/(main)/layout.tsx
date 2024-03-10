@@ -1,15 +1,14 @@
+/* The code provided is a TypeScript React component that sets up a layout for a web application. Here
+is a breakdown of what the code is doing: */
 'use client';
-import * as React from 'react';
-import { PaletteMode, Stack } from '@mui/material';
+import { PaletteMode } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-
+import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
-import getLPTheme from '../../styles/getLPTheme';
-import { Provider, useSelector } from 'react-redux';
-import store, { persistor } from '../../store/index';
+import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import adminSelectors from '@/store/auth/auth.selector';
+import store, { persistor } from '../../store/index';
+
 const defaultTheme = createTheme({});
 
 const layout = ({ children }: { children: React.ReactNode }) => {

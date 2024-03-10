@@ -1,32 +1,29 @@
-import * as React from 'react';
+/* This code snippet is a TypeScript React component called `AppAppBar`. It is a functional component
+that represents the top app bar of a web application. Here's a breakdown of what the code is doing: */
 import { PaletteMode } from '@mui/material';
-import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
+import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
-import Logo from '../../components/common/Logo';
-import { useDispatch, useSelector } from 'react-redux';
+import * as React from 'react';
 import adminSelectors from '@/store/auth/auth.selector';
 import { adminActions } from '@/store/auth/auth.slice';
-import SelectSmall from './SelectSmall';
+import { useDispatch, useSelector } from 'react-redux';
+import Logo from '../../components/common/Logo';
 interface AppAppBarProps {
     mode: PaletteMode;
     toggleColorMode: () => void;
 }
 
 function AppAppBar() {
-    const [sort, setSort] = React.useState('pubDate');
     const dispatch = useDispatch();
     const isAdmin = useSelector(adminSelectors.getIsAdmin());
     const handleLogout = () => {
         dispatch(adminActions.setIsAdmin(false));
         localStorage.removeItem('token');
     };
-
 
     return (
         <AppBar
@@ -73,7 +70,6 @@ function AppAppBar() {
                             REDDIT
                         </Typography>
                     </Box>
-             
 
                     {isAdmin && (
                         <Button

@@ -1,3 +1,5 @@
+/* This code snippet is a TypeScript React component that defines a layout for a web page. Here's a
+breakdown of what each part of the code is doing: */
 'use client';
 
 import Logo from '../common/Logo';

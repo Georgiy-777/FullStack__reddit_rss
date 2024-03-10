@@ -1,3 +1,4 @@
+/* This code snippet is a TypeScript React component called `ToggleColorMode`. */
 import * as React from 'react';
 import { PaletteMode } from '@mui/material';
 import Box from '@mui/material/Box';
